@@ -9,5 +9,5 @@ plugins:
 
 languages: ["he", "en"]
 default_lang: "he"
-exclude_from_localization: ["js", "images", "css"]
+exclude_from_localization: ["js", "images", "css", "CNAME"]
 parallel_localization: true
