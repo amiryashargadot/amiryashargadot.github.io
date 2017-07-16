@@ -1,0 +1,13 @@
+url: "http://knowyourrights.co.il" # the base hostname & protocol for your site, e.g. http://example.com
+
+markdown: kramdown
+
+destination: _dist
+
+plugins:
+  - jekyll-polyglot
+
+languages: ["he", "en"]
+default_lang: "he"
+exclude_from_localization: ["js", "images", "css"]
+parallel_localization: true
