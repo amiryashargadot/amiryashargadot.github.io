@@ -1,13 +1,29 @@
-url: "http://knowyourrights.co.il" # the base hostname & protocol for your site, e.g. http://example.com
+url: http://knowyourrights.co.il # the base hostname & protocol for your site, e.g. http://example.com
 
 markdown: kramdown
 
 destination: _dist
 
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - sass
+  - node_modules
+  - package.json
+  - package-lock.json
+  - gulpfile.js
+
 plugins:
   - jekyll-polyglot
 
-languages: ["he", "en"]
-default_lang: "he"
-exclude_from_localization: ["js", "images", "css", "CNAME"]
+languages:
+  - he
+  - en
+default_lang: he
+exclude_from_localization:
+  - js
+  - images
+  - css
+  - sass
+  - CNAME
 parallel_localization: true
