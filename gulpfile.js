@@ -4,6 +4,7 @@ var child = require('child_process');
 var gutil = require('gulp-util');
 
 var gulp = require('gulp');
+var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
@@ -29,6 +30,7 @@ gulp.task('jekyll', () => {
 
 gulp.task('sass', function () {
   return gulp.src('sass/**/*.sass')
+    .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'nested'
     }).on('error', sass.logError))
@@ -36,6 +38,7 @@ gulp.task('sass', function () {
       autoprefixer({browsers: 'last 3 versions'}),
       cssnano({autoprefixer: false, discardUnused: false})
     ]))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('css'));
 });
 

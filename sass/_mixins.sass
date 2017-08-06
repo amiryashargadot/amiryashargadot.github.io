@@ -1,0 +1,11 @@
+@mixin dir($dir)
+  [dir=#{$dir}] &
+    @content
+
+@mixin he
+  +dir(rtl)
+    @content
+
+@mixin en
+  +dir(ltr)
+    @content

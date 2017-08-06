@@ -1,15 +1,19 @@
 @import normalize
+@import mixins
 
 $color-maroon: #5f264e
 $color-cream: #f2df91
 $color-seafoam: #a9e5bb
 
-.page-header
-  
+$padding: 1rem
 
+html, body
+  width: 100vw
+  overflow-x: hidden
+
+.page-header
   position: relative
-  max-width: 75vh
-  margin: 20vh auto
+  margin: 10vh auto
   text-align: center
   color: $color-cream
 
@@ -23,11 +27,12 @@ $color-seafoam: #a9e5bb
     position: absolute
     top: ($accent-gap + $accent-top-width) * -1
     z-index: 0
-    width: 100%
+    width: 110%
     height: calc(100% + 5vw)
     padding-top: $accent-gap
     transform: rotate(-2deg)
-    transform-origin: left $accent-gap + $accent-top-width    
+    backface-visibility: hidden
+    transform-origin: left $accent-gap + $accent-top-width
     border-top: $accent-top-width solid rgba($color-maroon, .5)
     border-bottom: $accent-bottom-width solid rgba($color-seafoam, .5)
     background-color: $color-maroon
@@ -36,11 +41,45 @@ $color-seafoam: #a9e5bb
   .heading
     position: relative
     z-index: 1
+    padding-left: $padding
+    padding-right: $padding
+    font-size: 2.25rem
 
     &__subtitle
       display: block
-      font-size: .75em
+      line-height: 1.2
+      font-size: .65em
       color: $color-seafoam
 
-  @media (min-width: 320px)
-    max-width: 75vw
+.section
+  padding: 0 $padding
+
+  h2
+    position: relative
+    box-sizing: border-box
+    width: calc(100% + #{$padding})
+    padding-top: $padding / 2
+    padding-bottom: $padding / 2
+    line-height: 1.25
+    color: #fff
+
+    +he
+      right: $padding * -1
+      padding-right: $padding
+    +en
+      left: $padding * -1
+      padding-left: $padding
+    background-color: rgba(#000, .5)
+
+    &:before
+      content: ""
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 100%
+      width: 100%
+      height: 1rem
+      border-top: 3px solid $color-seafoam
+
+  &--rights
+    background-color: $color-cream
