@@ -1,4 +1,3 @@
-## Your rights and your status during an interrogation
 **Being accompanied throughout the investigating -** You have the right to be interrogated while accompanied by another person on your behalf, or by a representative from the Sexual Assault Crisis Center (to be approved by the police).
 
 **Sex of the investigator -** You have the right to choose the sex of the investigator and to demand the presence of a female police officer in the event that there is no available policewoman to conduct the investigation.

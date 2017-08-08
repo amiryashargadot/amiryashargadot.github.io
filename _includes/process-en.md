@@ -1,5 +1,3 @@
-## The process of handling complaints of sexual assault and abuse
-
 After filing the complaint, a police investigation will be carried out, which will usually include:
 - Filing a complaint with the police.
 - Providing testimony - investigation of the case.
@@ -11,4 +9,4 @@ After filing the complaint, a police investigation will be carried out, which wi
 
 Investigation proceedings and legal proceedings take a long time. Indictments are filed only in cases where the police and the State Attorney find sufficient evidence. Therefore, it is very important to be prepared for a long and complex process, to be examined in a hospital and to try to provide maximum evidence.
 
-`*` Not all cases are carried out in this manner. 
+`*` Not all cases are carried out in this manner.

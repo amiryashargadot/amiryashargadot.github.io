@@ -9,3 +9,23 @@
 @mixin en
   +dir(ltr)
     @content
+
+@mixin media($width)
+  @media (min-width: $width)
+    @content
+
+@mixin sm
+  +media($sm)
+    @content
+
+@mixin md
+  +media($md)
+    @content
+
+@mixin lg
+  +media($lg)
+    @content
+
+@mixin xl
+  +media($xl)
+    @content

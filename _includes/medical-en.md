@@ -1,4 +1,3 @@
-## Medical examination in the hospital
 **Medical examination- In order to establish evidence for the investigation, it is recommended to be examined in a hospital no more than one week from the occurrence of the incident.**
 
 The examinations are performed in a medical unit specified for cases of assault. The following hospitals have such units:

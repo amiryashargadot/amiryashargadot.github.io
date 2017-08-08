@@ -2,18 +2,46 @@
 @import mixins
 
 $color-maroon: #5f264e
+$color-maroon-trans: rgba($color-maroon, .5)
 $color-cream: #f2df91
+$color-cream-trans: rgba($color-cream, .5)
 $color-seafoam: #a9e5bb
+$color-seafoam-trans: rgba($color-seafoam, .5)
 
 $padding: 1rem
 
-html, body
+@font-face
+  font-family: 'Valeria Round';
+  src: url(../assets/VarelaRound-Regular.ttf);
+
+html, .body
   width: 100vw
   overflow-x: hidden
 
+html
+  font-size: $base-font-size
+
+  +md
+    font-size: 20px
+
+  +lg
+    font-size: 24px
+
+  +xl
+    font-size: 30px
+
+.body
+  font-family: 'Valeria Round', sans-serifqw4wq4q44444q
+  background-image: url(../assets/background.jpg)
+  background-size: 100%
+  background-attachment: fixed
+
 .page-header
   position: relative
-  margin: 10vh auto
+  max-width: $xl
+  +normalize-margin(2 0)
+  margin-left: auto
+  margin-right: auto
   text-align: center
   color: $color-cream
 
@@ -21,20 +49,24 @@ html, body
     $accent-gap: .3em
     $accent-top-width: .1em
     $accent-bottom-width: .5em
+    $width-overflow: 10%
 
     content: ""
     display: block
     position: absolute
     top: ($accent-gap + $accent-top-width) * -1
+    left: $width-overflow / -2
+    right: $width-overflow / -2
     z-index: 0
-    width: 110%
+    width: 100 + $width-overflow
     height: calc(100% + 5vw)
+    max-height: calc(100% + #{$xl * .05})
     padding-top: $accent-gap
     transform: rotate(-2deg)
     backface-visibility: hidden
     transform-origin: left $accent-gap + $accent-top-width
-    border-top: $accent-top-width solid rgba($color-maroon, .5)
-    border-bottom: $accent-bottom-width solid rgba($color-seafoam, .5)
+    border-top: $accent-top-width solid $color-maroon-trans
+    border-bottom: $accent-bottom-width solid $color-seafoam-trans
     background-color: $color-maroon
     background-clip: content-box
 
@@ -51,35 +83,64 @@ html, body
       font-size: .65em
       color: $color-seafoam
 
-.section
-  padding: 0 $padding
-
-  h2
+  .logos
     position: relative
-    box-sizing: border-box
-    width: calc(100% + #{$padding})
-    padding-top: $padding / 2
-    padding-bottom: $padding / 2
-    line-height: 1.25
-    color: #fff
+    z-index: 1
 
-    +he
-      right: $padding * -1
-      padding-right: $padding
-    +en
-      left: $padding * -1
-      padding-left: $padding
+    &__logo
+      height: 3rem
+
+.section
+  position: relative
+  +normalize-margin(3 0)
+
+  &:before
+    content: ""
+    position: absolute
+    bottom: calc(100% + #{$padding / 2})
+    left: 0
+    width: 100%
+    height: 6px
+
+  &__heading
+    $accent-gap: 1rem
+    $padding-v: $padding / 2
+
+    color: #fff
     background-color: rgba(#000, .5)
 
-    &:before
-      content: ""
-      position: absolute
-      left: 0
-      right: 0
-      bottom: 100%
-      width: 100%
-      height: 1rem
-      border-top: 3px solid $color-seafoam
+  &__heading, &__body
+    padding-left: $padding
+    padding-right: $padding
+
+  &__body
+    padding: $padding
+
+    ul
+      +he
+        padding: 0 2em 0 0
+      +en
+        padding: 0 0 0 2em
+
 
   &--rights
-    background-color: $color-cream
+    &:before
+      background-color: $color-seafoam-trans
+
+    .section__body
+      background-color: $color-cream-trans
+
+  &--process
+    &:before
+      background-color: $color-maroon-trans
+
+    .section__body
+      background-color: $color-seafoam-trans
+
+  &--medical
+    &:before
+      background-color: $color-cream-trans
+
+    .section__body
+      color: #fff
+      background-color: $color-maroon-trans

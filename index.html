@@ -5,6 +5,8 @@ permalink: '/'
 {% assign copy_process = "process-" | append: site.active_lang | append: ".md" %}
 {% assign copy_medical = "medical-" | append: site.active_lang | append: ".md" %}
 
+{% assign data = site.data[site.active_lang] %}
+
 <!doctype HTML>
 <html lang="{{ site.active_lang }}">
   <head>
@@ -22,18 +24,34 @@ permalink: '/'
         {{ site.data[site.active_lang].title }}
         <small class="heading__subtitle">{{ site.data[site.active_lang].subtitle }}</small>
       </h1>
+
+      <div class="logos">
+        <img class="logos__logo logos__logo--clinic" src="../assets/clinic-logo.svg" />
+        <img class="logos__logo logos__logo--clinic" src="../assets/tau-logo.svg" />
     </header>
 
     <section class="section section--rights">
-      {% capture rights %}{% include {{ copy_rights }} %}{% endcapture %} {{ rights | markdownify }}
+      <h2 class="section__heading">{{ data.headings.rights }}</h2>
+
+      <div class="section__body">
+        {% capture rights %}{% include {{ copy_rights }} %}{% endcapture %} {{ rights | markdownify }}
+      </div>
     </section>
 
-    <section class="section section--rights">
-      {% capture process %}{% include {{ copy_process }} %}{% endcapture %} {{ process | markdownify }}
+    <section class="section section--process">
+      <h2 class="section__heading">{{ data.headings.process }}</h2>
+
+      <div class="section__body">
+        {% capture process %}{% include {{ copy_process }} %}{% endcapture %} {{ process | markdownify }}
+      </div>
     </section>
 
-    <section class="section section--rights">
-      {% capture medical %}{% include {{ copy_medical }} %}{% endcapture %} {{ medical | markdownify }}
+    <section class="section section--medical">
+      <h2 class="section__heading">{{ data.headings.medical }}</h2>
+
+      <div class="section__body">
+        {% capture medical %}{% include {{ copy_medical }} %}{% endcapture %} {{ medical | markdownify }}
+      </div>
     </section>
   </body>
 </html>
